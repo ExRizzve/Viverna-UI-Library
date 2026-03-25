@@ -36,6 +36,7 @@ end)
 
 local VivUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/ExRizzve/Viverna-UI-Library/main/VivUI.lua"))()
 
+
 local Window = VivUI.CreateWindow("player", "")
 local Tab = Window:Tab("Movement", "")
 local Section = Tab:Section("speed and jump")
@@ -44,7 +45,7 @@ local player = game.Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait()
 local humanoid = char:WaitForChild("Humanoid")
 
-Section:Slider("WalkSpeed", 16, 500, function(value)
+Section:Slider("WalkSpeed", 16, 500, function(value) -- 
     humanoid.WalkSpeed = value
 end)
 
