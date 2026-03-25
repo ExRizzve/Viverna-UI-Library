@@ -31,3 +31,36 @@ end)
 Section:Slider("speed", 0, 100, function(value)
     print(value)
 end)
+
+-- Example of a script / Пример скрипта
+
+local VivUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/ExRizzve/Viverna-UI-Library/main/VivUI.lua"))()
+
+local Window = VivUI.CreateWindow("player", "")
+local Tab = Window:Tab("Movement", "")
+local Section = Tab:Section("speed and jump")
+
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local humanoid = char:WaitForChild("Humanoid")
+
+Section:Slider("WalkSpeed", 16, 500, function(value)
+    humanoid.WalkSpeed = value
+end)
+
+Section:Slider("JumpPower", 50, 500, function(value)
+    humanoid.JumpPower = value
+end)
+
+Section:Button("Reset Speed", function()
+    humanoid.WalkSpeed = 16
+end)
+
+Section:Button("Reset Jump", function()
+    humanoid.JumpPower = 50
+end)
+
+player.CharacterAdded:Connect(function(newChar)
+    char = newChar
+    humanoid = char:WaitForChild("Humanoid")
+end)
