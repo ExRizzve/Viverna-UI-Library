@@ -1,22 +1,6 @@
 --[[
     Viverna UI Library
-    Developer: ExRizzve
-    
-    Как использовать в Roblox Studio:
-    1. Создайте LocalScript в StarterPlayer > StarterPlayerScripts
-    2. Скопируйте этот код в ModuleScript и поместите в ReplicatedStorage
-    3. В LocalScript используйте:
-       local Viverna = require(game.ReplicatedStorage.Viverna)
-       local Window = Viverna.CreateWindow("Название", "ID_Логотипа")
-    
-    Пример использования:
-    local Viverna = require(game.ReplicatedStorage.Viverna)
-    local Window = Viverna.CreateWindow("Viverna GUI", "123456789")
-    local Tab = Window:Tab("Главная", "123456789")
-    local Section = Tab:Section("Функции")
-    Section:Button("Кнопка", function()
-        print("Нажата кнопка!")
-    end)
+    ExRizzve
 --]]
 
 local Viverna = {}
